@@ -12,7 +12,9 @@ import reactDom from 'react-dom';
 
 const admin = {
   location: {state: "NY"},
-  uuid: "12345",
+  login: {
+    uuid: "12345"
+  },
   picture:{
      medium: "https://randomuser.me/api/portraits/thumb/men/50.jpg"
     },
@@ -49,6 +51,11 @@ function App() {
       </header>
 
 
+      <Route exact path="/users/:id">
+        <User users={users} />
+      </Route>
+
+
       <Route  path="/users">
 
       <Users users={users}/>
@@ -61,6 +68,7 @@ function App() {
       <Route exact path="/">
       <HomePage />
       </Route>
+
 
 
   
