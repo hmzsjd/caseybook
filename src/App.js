@@ -12,7 +12,7 @@ import reactDom from 'react-dom';
 
 const admin = {
   location: "NY",
-  uiud: "12345",
+  uuid: "12345",
   picture: "https://randomuser.me/api/portraits/thumb/men/50.jpg",
   name: "Test User",
   email: "test@tester.com"
