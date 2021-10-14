@@ -2,6 +2,7 @@ import './App.css';
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import Users from './Components/Users';
+import HomePage from './Components/HomePage';
 
 import { Route, Link } from 'react-router-dom';
 import reactDom from 'react-dom';
@@ -19,7 +20,7 @@ const admin = {
 
 function App() {
 
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState([admin]);
 
   useEffect(() => {
     axios.get("https://randomuser.me/api/?results=5")
@@ -28,8 +29,6 @@ function App() {
     })
     .catch(err => console.error(err));
   }, [])
-
-
 
 
 
@@ -45,12 +44,21 @@ function App() {
       </header>
 
 
-      <Route path="/users">
+      <Route  path="/users">
 
-      <Users />
+      <Users users={users}/>
+
+      {/* 1st User is component import
+      2nd User is the way we will reference the prop inside the User component
+      3rd User is the data we are pulling from inside this file */}
       </Route>
-      <h1>CaseyBook</h1>
-      <h2>Like Facebook</h2>
+
+      <Route exact path="/">
+      <HomePage />
+      </Route>
+
+
+  
       
       
 
