@@ -1,20 +1,12 @@
 import './App.css';
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
+import Users from './Components/Users';
 
-/**
- * 
- * API DATA:
- * user.location -> state
- * user.username.uuid
- * user.picture.medium
- * user.name -> user.first + user.last
- * user.email
- * 
- * user.posts -> stretch
- * likes -> stretch
- * 
- */
+import { Route, Link } from 'react-router-dom';
+import reactDom from 'react-dom';
+
+
 
 
 const admin = {
@@ -43,11 +35,42 @@ function App() {
 
   return (
     <div className="App">
+      <header>
+        <nav>
+          <Link to="/">Home</Link>
+          <Link to="/users">Friends Page</Link>
+          
+          
+        </nav>
+      </header>
+
+
+      <Route path="/users">
+
+      <Users />
+      </Route>
       <h1>CaseyBook</h1>
       <h2>Like Facebook</h2>
-      <p>Coming Soon...</p>
+      
+      
+
     </div>
   );
 }
 
 export default App;
+
+
+/**
+ * 
+ * API DATA:
+ * user.location -> state
+ * user.username.uuid
+ * user.picture.medium
+ * user.name -> user.first + user.last
+ * user.email
+ * 
+ * user.posts -> stretch
+ * likes -> stretch
+ * 
+ */
