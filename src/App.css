@@ -38,3 +38,10 @@ nav {
   flex-direction: row;
   justify-content: space-around;
 }
+
+
+.user-wrapper img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
