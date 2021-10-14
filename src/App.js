@@ -6,15 +6,24 @@ import axios from 'axios';
  * 
  * API DATA:
  * user.location -> state
- * user.uuid
+ * user.username.uuid
  * user.picture.medium
  * user.name -> user.first + user.last
  * user.email
  * 
  * user.posts -> stretch
+ * likes -> stretch
  * 
  */
 
+
+const admin = {
+  location: "NY",
+  uiud: "12345",
+  picture: "https://randomuser.me/api/portraits/thumb/men/50.jpg",
+  name: "Test User",
+  email: "test@tester.com"
+}
 
 function App() {
 
