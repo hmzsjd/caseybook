@@ -1,8 +1,8 @@
 import './App.css';
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import Users from './Components/Users';
-import HomePage from './Components/HomePage';
+import Users from './Components/Users'
+import HomePage from './Components/HomePage'
 
 import { Route, Link } from 'react-router-dom';
 import reactDom from 'react-dom';
@@ -11,10 +11,11 @@ import reactDom from 'react-dom';
 
 
 const admin = {
-  location: "NY",
+  location: {state: "NY"},
   uuid: "12345",
   picture: "https://randomuser.me/api/portraits/thumb/men/50.jpg",
-  name: "Test User",
+  name: {
+    first: "Test User"},
   email: "test@tester.com"
 }
 
@@ -26,6 +27,7 @@ function App() {
     axios.get("https://randomuser.me/api/?results=5")
     .then(res => {
       console.log(res.data.results);
+      setUsers([...users, ...res.data.results]);
     })
     .catch(err => console.error(err));
   }, [])
