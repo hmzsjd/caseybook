@@ -13,9 +13,12 @@ import reactDom from 'react-dom';
 const admin = {
   location: {state: "NY"},
   uuid: "12345",
-  picture: "https://randomuser.me/api/portraits/thumb/men/50.jpg",
+  picture:{
+     medium: "https://randomuser.me/api/portraits/thumb/men/50.jpg"
+    },
   name: {
-    first: "Test User"},
+    first: "Test User"
+  },
   email: "test@tester.com"
 }
 
